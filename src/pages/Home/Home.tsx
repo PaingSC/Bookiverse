@@ -1,6 +1,7 @@
 import styles from "./Home.module.css";
-import { books } from "../../data/books";
-import { Link } from "react-router-dom";
+// import { books } from "../../data/books";
+// import { Link } from "react-router-dom";
+import BookGallery from "../../components/BookGallery/BookGallery";
 
 const Home = () => {
   return (
@@ -11,7 +12,7 @@ const Home = () => {
         <button className={styles.cta}>Explore Library</button>
       </div>
 
-      <div className={styles.gallery}>
+      {/* <div className={styles.gallery}>
         {books.map((book) => (
           <Link to={`/books/${book.id}`} key={book.id} className={styles.card}>
             <img src={book.cover} alt={book.title} />
@@ -19,7 +20,9 @@ const Home = () => {
             <p>{book.author}</p>
           </Link>
         ))}
-      </div>
+      </div> */}
+      {/* Book Gallery */}
+      <BookGallery />
     </section>
   );
 };
