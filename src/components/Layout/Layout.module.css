@@ -1,6 +1,6 @@
 .container {
   min-height: 100vh;
-  background: var(--bg-gradient);
+  background: transparent;
   color: var(--text);
   display: flex;
   flex-direction: column;
