@@ -1,0 +1,11 @@
+@import "./_reset.css";
+@import "./_variables.css";
+
+/* Utility classes or global overrides (if needed) */
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}

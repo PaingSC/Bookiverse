@@ -1,0 +1,11 @@
+:root {
+  --primary: #6c63ff;
+  --primary-hover: #574b90;
+  --secondary: #a29bfe;
+  --accent: #f9ca24;
+  --bg: #f7f7fb;
+  --text: #1d1d1f;
+
+  --radius: 0.5rem;
+  --max-width: 1200px;
+}
