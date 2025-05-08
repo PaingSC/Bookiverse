@@ -1,4 +1,4 @@
-.container {
+/* .container {
   max-width: var(--max-width);
   margin: 2rem auto;
   display: flex;
@@ -28,4 +28,68 @@
     flex-direction: row;
     align-items: flex-start;
   }
+} */
+
+.container {
+  display: flex;
+  gap: 2rem;
+  max-width: var(--max-width);
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.cover {
+  width: 15rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+  flex: 1;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  color: var(--secondary);
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.audioButton {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.readBtn,
+.downloadBtn {
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--primary);
+  color: white;
+  border-radius: var(--radius);
+}
+
+.subscribeNotice {
+  margin-top: 2rem;
+  font-size: 1rem;
+  background: #fff3cd;
+  padding: 1rem;
+  border-left: 4px solid var(--accent);
 }

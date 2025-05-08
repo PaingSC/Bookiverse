@@ -17,7 +17,7 @@ const mockBooks = [
 const BookDetail = () => {
   const { bookId } = useParams();
   console.log(bookId);
-  const book = mockBooks.find((book) => book.id === bookId);
+  const book = mockBooks.find((book) => book.id === id);
   const isMember = false;
 
   if (!book) {
