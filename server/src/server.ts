@@ -20,7 +20,44 @@ mongoose
   })
   .catch((err) => console.error(err));
 
+// Book Schema
+const bookSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: [true, "A book must have a title!"],
+  },
+  author: {
+    type: String,
+    required: [true, "A book must have a author!"],
+  },
+  cover: {
+    type: String,
+    required: [true, "A book must have a cover!"],
+  },
+  description: {
+    type: String,
+    required: [true, "A book must have a description!"],
+  },
+});
+
 // Book Model
+const Book = mongoose.model("Book", bookSchema);
+
+const testBook = new Book({
+  title: "Digital Fortress",
+  author: "Dan Brown",
+  cover: "/assets/books/book_dummy.webp",
+  description: "A thriller about code and secrets.",
+});
+
+testBook
+  .save()
+  .then((doc) => {
+    console.log(doc);
+  })
+  .catch((err) => {
+    console.log("Error 💥", err);
+  });
 
 // Server
 const PORT = process.env.PORT || 5000;
