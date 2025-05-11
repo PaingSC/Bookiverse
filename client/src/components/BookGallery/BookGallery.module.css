@@ -22,6 +22,7 @@
 }
 
 .card:hover {
+  transform: none;
   transform: translateY(-6px);
   box-shadow: 0 0 20px rgba(108, 99, 255, 0.4);
 }

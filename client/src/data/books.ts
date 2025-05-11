@@ -11,7 +11,6 @@ export const books: Book[] = [
     id: "1",
     title: "The Silent Sea",
     author: "James Rollins",
-    // cover: "./src/assets/books/book_dummy.webp",
     cover: "/assets/books/book_dummy.webp",
     description: "A gripping mystery across the oceans.",
   },
