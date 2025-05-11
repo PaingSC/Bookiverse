@@ -1,7 +1,7 @@
-import { Request, Response } from "express";
+import { Request, RequestHandler, Response } from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import User from "../models/User";
+import User, { IUser } from "../models/User";
 import generateToken from "../utils/generateToken";
 
 export const register = async (req: Request, res: Response) => {
@@ -13,7 +13,11 @@ export const register = async (req: Request, res: Response) => {
       return res.status(400).json({ message: "User already exists" });
 
     const hashedPassword = await bcrypt.hash(password, 10);
-    const user = await User.create({ name, email, password: hashedPassword });
+    const user = (await User.create({
+      name,
+      email,
+      password: hashedPassword,
+    })) as IUser;
     const token = generateToken(user._id as string);
 
     res.status(201).json({ user, token });

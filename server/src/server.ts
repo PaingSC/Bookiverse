@@ -4,6 +4,7 @@ import { number } from "framer-motion";
 import mongoose from "mongoose";
 
 import authRoutes from "./routes/authRoutes";
+import bookRoutes from "./routes/bookRoutes";
 
 dotenv.config({ path: "./config.env" });
 
@@ -15,6 +16,7 @@ app.use(express.json());
 // Register routes with base path
 // app.use("api/auth", authRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/v1/books", bookRoutes);
 
 // Connecting to DB
 const DB = process.env.DATABASE;

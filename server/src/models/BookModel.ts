@@ -5,35 +5,38 @@ export interface IBook extends Document {
   author: string;
   cover: string;
   description: string;
-  isbn?: number;
+  isbn: number;
 }
 
 // Book Schema
-const bookSchema = new mongoose.Schema<IBook>({
-  title: {
-    type: String,
-    required: [true, "A book must have a title!"],
+const bookSchema = new mongoose.Schema<IBook>(
+  {
+    title: {
+      type: String,
+      required: [true, "A book must have a title!"],
+    },
+    author: {
+      type: String,
+      required: [true, "A book must have a author!"],
+    },
+    cover: {
+      type: String,
+      required: [true, "A book must have a cover!"],
+    },
+    description: {
+      type: String,
+      required: [true, "A book must have a description!"],
+    },
+    isbn: {
+      type: Number,
+      unique: [true, "There is an existing ISBN number."],
+    },
   },
-  author: {
-    type: String,
-    required: [true, "A book must have a author!"],
-  },
-  cover: {
-    type: String,
-    required: [true, "A book must have a cover!"],
-  },
-  description: {
-    type: String,
-    required: [true, "A book must have a description!"],
-  },
-  isbn: {
-    type: Number,
-  },
-});
+  { timestamps: true }
+);
 
 // Book Model
 const Book = mongoose.model<IBook>("Book", bookSchema);
-
 export default Book;
 
 // const testBook = new Book({
